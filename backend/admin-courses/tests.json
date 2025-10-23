@@ -1,0 +1,40 @@
+{
+  "tests": [
+    {
+      "name": "Get all courses as admin",
+      "method": "GET",
+      "path": "/",
+      "headers": {
+        "X-User-Id": "1"
+      },
+      "expectedStatus": 200,
+      "expectedBody": [
+        {
+          "id": "number",
+          "title": "string"
+        }
+      ],
+      "bodyMatcher": "partial"
+    },
+    {
+      "name": "Create new course",
+      "method": "POST",
+      "path": "/",
+      "headers": {
+        "X-User-Id": "1"
+      },
+      "body": {
+        "title": "Новый курс",
+        "description": "Описание курса",
+        "coverImage": "https://example.com/image.jpg",
+        "durationHours": 5
+      },
+      "expectedStatus": 201,
+      "expectedBody": {
+        "id": "number",
+        "title": "string"
+      },
+      "bodyMatcher": "partial"
+    }
+  ]
+}

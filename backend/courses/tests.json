@@ -1,0 +1,29 @@
+{
+  "tests": [
+    {
+      "name": "Get all courses",
+      "method": "GET",
+      "path": "/",
+      "expectedStatus": 200,
+      "expectedBody": [
+        {
+          "id": "number",
+          "title": "string"
+        }
+      ],
+      "bodyMatcher": "partial"
+    },
+    {
+      "name": "Get single course",
+      "method": "GET",
+      "path": "/?id=1",
+      "expectedStatus": 200,
+      "expectedBody": {
+        "id": "number",
+        "title": "string",
+        "lessons": "array"
+      },
+      "bodyMatcher": "partial"
+    }
+  ]
+}

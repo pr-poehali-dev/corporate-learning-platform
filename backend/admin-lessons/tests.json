@@ -1,0 +1,28 @@
+{
+  "tests": [
+    {
+      "name": "Create new lesson",
+      "method": "POST",
+      "path": "/",
+      "headers": {
+        "X-User-Id": "1"
+      },
+      "body": {
+        "courseId": 1,
+        "title": "Новый урок",
+        "contentType": "text",
+        "contentData": {
+          "text": "Содержание урока"
+        },
+        "orderIndex": 5,
+        "durationMinutes": 20
+      },
+      "expectedStatus": 201,
+      "expectedBody": {
+        "id": "number",
+        "title": "string"
+      },
+      "bodyMatcher": "partial"
+    }
+  ]
+}

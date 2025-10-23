@@ -1,0 +1,33 @@
+{
+  "tests": [
+    {
+      "name": "Login existing user",
+      "method": "POST",
+      "path": "/",
+      "body": {
+        "phone": "40ebc4-001"
+      },
+      "expectedStatus": 200,
+      "expectedBody": {
+        "userId": "number",
+        "phone": "string",
+        "fullName": "string",
+        "role": "string"
+      },
+      "bodyMatcher": "partial"
+    },
+    {
+      "name": "Login non-existing user",
+      "method": "POST",
+      "path": "/",
+      "body": {
+        "phone": "+79001112233"
+      },
+      "expectedStatus": 404,
+      "expectedBody": {
+        "error": "string"
+      },
+      "bodyMatcher": "partial"
+    }
+  ]
+}

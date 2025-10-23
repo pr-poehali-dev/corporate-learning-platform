@@ -1,0 +1,21 @@
+{
+  "tests": [
+    {
+      "name": "Register new student",
+      "method": "POST",
+      "path": "/",
+      "body": {
+        "phone": "+79991234567",
+        "fullName": "Иван Иванов"
+      },
+      "expectedStatus": 201,
+      "expectedBody": {
+        "userId": "number",
+        "phone": "string",
+        "fullName": "string",
+        "role": "string"
+      },
+      "bodyMatcher": "partial"
+    }
+  ]
+}
